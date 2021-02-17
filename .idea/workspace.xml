@@ -1,15 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="6dd44bbe-c4bc-4f01-9078-dafa05bb63b3" name="Default Changelist" comment="" />
+    <list default="true" id="6dd44bbe-c4bc-4f01-9078-dafa05bb63b3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Adapters/ToDoListAdapter/ToDoListAdapterInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Adapters/ToDoListAdapter/ToDoListProvider1Adapter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Adapters/ToDoListAdapter/ToDoListProvider2Adapter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Factory/ToDoListAdapterFactoryInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Factory/ToDoListFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Factory/ToDoListFactoryInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Factory/TodoListAdapterFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ToDoController/TodoController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/ProviderAdapterModels/ToDoProviderAdapterModels/ToDoListProviderAdapterModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/ToDoListProviderResponseModels/ToDoListApiResponseModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Providers/ToDoListProviders/Interfaces/ToDoListProviderInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Providers/ToDoListProviders/ToDoListListProvider1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Providers/ToDoListProviders/ToDoListListProvider2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Utility/ToDoClient.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -129,9 +172,23 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gokhanozgur" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\JobPlanner\app\Models\ToDoProviderResponseModels" />
+      <recent name="C:\xampp\htdocs\JobPlanner\app\Providers\ToDoProviders\Interface" />
+      <recent name="C:\xampp\htdocs\JobPlanner\app\Providers\ToDoProviders\Interfaces" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -147,11 +204,52 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1613585768045</updated>
-      <workItem from="1613585769086" duration="413000" />
+      <workItem from="1613585769086" duration="832000" />
+      <workItem from="1613586608548" duration="15304000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="765" y="206" key="#com.intellij.ide.util.MemberChooser" timestamp="1613599668302">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="765" y="206" key="#com.intellij.ide.util.MemberChooser/1912.-1080.1920.1050/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1613599668302" />
+    <state x="697" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1613600776551">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="697" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1912.-1080.1920.1050/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1613597800418" />
+    <state x="697" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1613600776551" />
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1613600726046">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1912.-1080.1920.1050/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1613598076413" />
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1613600726046" />
+    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1613595142191">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="740" y="279" key="FileChooserDialogImpl/1912.-1080.1920.1050/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1613595142191" />
+    <state x="709" y="247" key="NewPhpClassDialog" timestamp="1613600690736">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="709" y="247" key="NewPhpClassDialog/1912.-1080.1920.1050/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1613599633551" />
+    <state x="709" y="247" key="NewPhpClassDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1613600690736" />
+    <state x="794" y="227" key="RollbackChangesDialog" timestamp="1613589307994">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="794" y="227" key="RollbackChangesDialog/1912.-1080.1920.1050/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1613589307994" />
   </component>
 </project>
