@@ -4,6 +4,7 @@ namespace App\Http\Controllers\ToDoController;
 
 use App\Factory\ToDoListFactory;
 use App\Http\Controllers\Controller;
+use App\Models\ProviderAdapterModels\ToDoProviderAdapterModels\ToDoListProviderAdapterModel;
 use App\Providers\ToDoListProviders\ToDoListListProvider1;
 use App\Providers\ToDoListProviders\ToDoListListProvider2;
 use App\Utility\ToDoClient;
@@ -16,6 +17,8 @@ class TodoController extends Controller
         $toDoFactory = new ToDoListFactory();
         $toDoProvider1 = $toDoFactory->runProvider(new ToDoListListProvider1(), 'GET', 'http://www.mocky.io', '/v2/5d47f24c330000623fa3ebfa');
         $toDoProvider2 = $toDoFactory->runProvider(new ToDoListListProvider2(), 'GET', 'http://www.mocky.io', '/v2/5d47f235330000623fa3ebf7');
+
+        return view("to-do-list", compact('toDoProvider1', 'toDoProvider2'));
 
     }
 }
