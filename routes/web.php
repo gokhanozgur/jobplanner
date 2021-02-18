@@ -15,9 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect()->route('createToDoPlan');
+    return redirect()->route('showToDoPlan');
 });
 
 Route::get('plan/create', [TodoController::class, 'createToDoPlan'])->name('createToDoPlan');
 
+Route::get('plan/show', [TodoController::class, 'showToDoPlan'])->name('showToDoPlan');
+
+/* Save tasks from provider with web ui */
 Route::get('tasks/save', [TodoController::class, 'saveTasksToDB'])->name('saveTasksToDB');

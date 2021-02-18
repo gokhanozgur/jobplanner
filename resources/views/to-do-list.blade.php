@@ -33,20 +33,12 @@
                     @php
                         {{ $loopCount = 0; }}
                     @endphp
-                    @foreach($toDoProvider1 as $key => $toDoProvider1)
+                    @foreach($tasks as $key => $task)
                         <tr>
                             <td>{{ ++$loopCount }}</td>
-                            <td>{{ $toDoProvider1->getTask() }}</td>
-                            <td>{{ $toDoProvider1->getLevel() }}</td>
-                            <td>{{ $toDoProvider1->getEstimatedDuration() }}</td>
-                        </tr>
-                    @endforeach
-                    @foreach($toDoProvider2 as $toDoProvider2)
-                        <tr>
-                            <td>{{ ++$loopCount }}</td>
-                            <td>{{ $toDoProvider2->getTask() }}</td>
-                            <td>{{ $toDoProvider2->getLevel() }}</td>
-                            <td>{{ $toDoProvider2->getEstimatedDuration() }}</td>
+                            <td>{{ $task->task }}</td>
+                            <td>{{ $task->level }}</td>
+                            <td>{{ $task->estimated_duration }}</td>
                         </tr>
                     @endforeach
                     </tbody>

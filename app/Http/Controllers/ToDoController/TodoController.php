@@ -14,34 +14,36 @@ use Illuminate\Support\Facades\Log;
 
 class TodoController extends Controller
 {
-    public function createToDoPlan() {
+    public function showToDoPlan() {
 
-        $toDoFactory = new ToDoListFactory();
-        $toDoProvider1 = $toDoFactory->runProvider(new ToDoListListProvider1(), 'GET', 'http://www.mocky.io', '/v2/5d47f24c330000623fa3ebfa');
-        $toDoProvider2 = $toDoFactory->runProvider(new ToDoListListProvider2(), 'GET', 'http://www.mocky.io', '/v2/5d47f235330000623fa3ebf7');
-
-        //return view("to-do-list", compact('toDoProvider1', 'toDoProvider2'));
+        $tasks = Task::all();
+        return view("to-do-list", compact('tasks'));
 
     }
 
     public function saveTasksToDB() {
 
+        /* For Web UI */
+
         $toDoFactory = new ToDoListFactory();
         $toDoProvider1 = $toDoFactory->runProvider(new ToDoListListProvider1(), 'GET', 'http://www.mocky.io', '/v2/5d47f24c330000623fa3ebfa');
         $toDoProvider2 = $toDoFactory->runProvider(new ToDoListListProvider2(), 'GET', 'http://www.mocky.io', '/v2/5d47f235330000623fa3ebf7');
 
-        foreach ($toDoProvider1 as $provider1) {
+        $mergedProviderData = array_merge($toDoProvider1, $toDoProvider2);
+
+        /** @var ToDoListProviderAdapterModel $provider1 */
+        foreach ($mergedProviderData as $provider1) {
             $task = new Task();
-            $task->task = $provider1->task;
-            $task->level = $provider1->level;
-            $task->estimated_duration = $provider1->estimated_duration;
+            $task->task = $provider1->getTask();
+            $task->level = $provider1->getLevel();
+            $task->estimated_duration = $provider1->getEstimatedDuration();
 
             try {
                 if ($task->save()) {
-                    echo $task->task . '-> Succesfully added to database.';
+                    echo $task->task . '-> Succesfully added to database.<br>';
                 }
                 else {
-                    echo $task->task . '-> Failed.';
+                    echo $task->task . '-> Failed.<br>';
                 }
             }
             catch (\Exception $exception) {
@@ -51,4 +53,9 @@ class TodoController extends Controller
         }
 
     }
+
+    public function createToDoPlan() {
+        // Assign task codes here...
+    }
+
 }
