@@ -18,4 +18,6 @@ Route::get('/', function () {
     return redirect()->route('createToDoPlan');
 });
 
-Route::get('/create/todoplan', [TodoController::class, 'createToDoPlan'])->name('createToDoPlan');
+Route::get('plan/create', [TodoController::class, 'createToDoPlan'])->name('createToDoPlan');
+
+Route::get('tasks/save', [TodoController::class, 'saveTasksToDB'])->name('saveTasksToDB');
