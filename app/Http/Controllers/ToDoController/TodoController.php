@@ -4,8 +4,10 @@ namespace App\Http\Controllers\ToDoController;
 
 use App\Factory\ToDoListFactory;
 use App\Http\Controllers\Controller;
+use App\Models\AssignedTask;
 use App\Models\ProviderAdapterModels\ToDoProviderAdapterModels\ToDoListProviderAdapterModel;
 use App\Models\Task;
+use App\Models\User;
 use App\Providers\ToDoListProviders\ToDoListListProvider1;
 use App\Providers\ToDoListProviders\ToDoListListProvider2;
 use App\Utility\ToDoClient;
@@ -56,6 +58,59 @@ class TodoController extends Controller
 
     public function createToDoPlan() {
         // Assign task codes here...
+        // Assign Steps
+        // 1. Sort by descending Developer performance.
+        // 2. Check developer weekly work hour.
+        // 3. Match task level with developer performance and assign.
+        // 4. If there is still work left, sort by ascending Developer performance.
+        // 5. Do 2. & 3. steps.
+
+        /* Get Developers */
+        $developers = User::orderBy('performance', 'DESC')->get();
+
+        $week = 1;
+        $weeklyTotalWorkHour = 45;
+
+
+        do {
+
+            /* Get Tasks */
+            $tasks = Task::whereNull('assigned_user_id')->get();
+
+            foreach ($tasks as $task) {
+
+                if (is_null($task->assigned_user_id)) {
+
+                    foreach ($developers as $developer) {
+
+                        /* Developer Assigned Tasks */
+                        $assignedTasks = Task::with(['user'])->where([
+                            ['assigned_user_id', '=', $developer->id]
+                        ])->get();
+                        $totalWorkHour = $assignedTasks->sum('estimated_duration');
+
+                        if (($totalWorkHour + $task->estimated_duration) < $weeklyTotalWorkHour && $task->level == $developer->performance) {
+                            echo $task->id . ' işini ' . $developer->name. ' YAPABİLİR<br>';
+                            $task->assigned_user_id = $developer->id;
+                            $task->task_status = 1;
+                            $task->save();
+                            break;
+                        }
+
+                    }
+
+                }
+
+            }
+
+
+            $weeklyTotalWorkHour *= 2;
+            $week++;
+
+        }while(Task::whereNull('assigned_user_id')->count() > 0);
+        echo $weeklyTotalWorkHour."<br>";
+        echo $week;
     }
+
 
 }

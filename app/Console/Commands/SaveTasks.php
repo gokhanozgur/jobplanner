@@ -54,7 +54,8 @@ class SaveTasks extends Command
         $this->info('Data saving to database...');
 
         /** @var ToDoListProviderAdapterModel $providerData */
-        foreach ($mergedProviderData as $providerData) {
+        foreach ($mergedProviderData as $key => $providerData) {
+            ++$key;
             $main = $this->output->createProgressBar(100);
             $task = new Task();
             $task->task = $providerData->getTask();
@@ -63,10 +64,10 @@ class SaveTasks extends Command
 
             try {
                 if ($task->save()) {
-                    $this->info(' ' . $task->task . ' -> Succesfully added to database.');
+                    $this->info($key . '. ' . $task->task . ' -> Successfully added to database.');
                 }
                 else {
-                    $this->alert($task->task . ' -> Failed.');
+                    $this->alert($key . '. ' . $task->task . ' -> Failed.');
                 }
             }
             catch (\Exception $exception) {

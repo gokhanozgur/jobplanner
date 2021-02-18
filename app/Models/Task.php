@@ -10,4 +10,9 @@ class Task extends Model
     use HasFactory;
 
     protected $fillable = ['task', 'level', 'estimated_duration'];
+
+    public function user() {
+        return $this->hasOne(User::class, 'id', 'assigned_user_id');
+    }
+
 }

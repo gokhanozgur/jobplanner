@@ -18,6 +18,8 @@ class CreateTasksTable extends Migration
             $table->string('task');
             $table->string('level');
             $table->string('estimated_duration');
+            $table->bigInteger('assigned_user_id')->nullable();
+            $table->tinyInteger('task_status')->default(0)->nullable();
             $table->timestamps();
             $table->softDeletes()->nullable();
         });
