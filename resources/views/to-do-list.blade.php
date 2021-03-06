@@ -19,6 +19,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
+            <h3 style="font-weight: bold;">Total Week: <span>?</span></h3>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -27,6 +28,8 @@
                         <th scope="col">Task</th>
                         <th scope="col">Level</th>
                         <th scope="col">Estimated Duration</th>
+                        <th scope="col">Assigened to</th>
+                        <th scope="col">Dev. Performance</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -39,6 +42,8 @@
                             <td>{{ $task->task }}</td>
                             <td>{{ $task->level }}</td>
                             <td>{{ $task->estimated_duration }}</td>
+                            <td>{{ $task->user->name }}</td>
+                            <td>{{ $task->user->performance }}</td>
                         </tr>
                     @endforeach
                     </tbody>

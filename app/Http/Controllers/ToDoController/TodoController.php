@@ -18,7 +18,7 @@ class TodoController extends Controller
 {
     public function showToDoPlan() {
 
-        $tasks = Task::all();
+        $tasks = Task::with('user')->get();
         return view("to-do-list", compact('tasks'));
 
     }
